@@ -26,7 +26,7 @@ app.use(middlewares.errorHandler)
 Configuration.connectTodadabase()
 Configuration.connectToPort(app)
 
-export default app
+
 
 
 
