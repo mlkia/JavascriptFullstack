@@ -6,6 +6,7 @@ import bodyParser from 'body-parser'
 import middlewares from './src/middlewares/MiddleWares.js'
 import Configuration from './configuration/Configuration.js'
 import UserRoutes from './src/routes/User.routes.js'
+import cors from 'cors'
 
 dotenv.config()
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json())
 app.use(helmet())
 app.use(morgan('common'))
+app.use(cors({credentials:true}))
 
 app.get('/recipe', (req, res) =>{
   res.send('Bancaks! ')
